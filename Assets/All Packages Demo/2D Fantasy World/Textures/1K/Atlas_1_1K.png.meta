@@ -314,6 +314,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -433,10 +445,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Mushroom_6: 21300082
-      Mushroom_4: 21300074
       Magic_tree_1_2: 21300094
       Mushroom_1: 21300046
+      Mushroom_4: 21300074
+      Mushroom_6: 21300082
       Vegetation_12: 21300120
   spritePackingTag: 
   pSDRemoveMatte: 0
