@@ -12,6 +12,10 @@ public class PlayerMovement : MonoBehaviour
     bool isFacingRight = true;
 
     public float jumpForce = 5;
+    bool isGrounded;
+    public Transform groundCheck;
+    public LayerMask groundLayer;
+    int numberOfJumps = 0;
 
     public Rigidbody2D playerRB;
 
@@ -33,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
+        Debug.Log(isGrounded);
         playerRB.velocity = new Vector2(direction * speed * Time.fixedDeltaTime, playerRB.velocity.y);
         animator.SetFloat("Speed", Mathf.Abs(direction));
 
@@ -46,6 +52,20 @@ public class PlayerMovement : MonoBehaviour
     }
     void Jump()
     {
-        playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
+        if(isGrounded)
+        {
+            numberOfJumps= 0;
+            playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
+            numberOfJumps++;
+        }
+        else
+        {
+            if(numberOfJumps == 1)
+            {
+                playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
+                numberOfJumps++;
+            }
+        }
+            
     }
 }
